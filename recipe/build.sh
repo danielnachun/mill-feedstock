@@ -12,6 +12,7 @@ tee ${PREFIX}/bin/mill << EOF
 #!/bin/sh
 exec \${JAVA_HOME}/bin/java -jar \${CONDA_PREFIX}/libexec/mill/mill.jar "\$@"
 EOF
+chmod +x ${PREFIX}/bin/mill
 
 # Create batch wrapper so that it has a .cmd extension and is recognized as executable
 tee ${PREFIX}/bin/mill.cmd << EOF
