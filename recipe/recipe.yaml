@@ -1,20 +1,23 @@
 context:
-  version: 0.12.10
+  version: 1.0.6
 
 package:
   name: mill
   version: ${{ version }}
 
 source:
-  git: https://github.com/com-lihaoyi/mill
-  tag: ${{ version }}
+  - git: https://github.com/com-lihaoyi/mill
+    tag: ${{ version }}
+  - url: https://github.com/com-lihaoyi/mill/archive/refs/tags/${{ version }}.tar.gz
+    sha256: 7e939d6e9be38335bd2ca21095ec51f5118172f255fa9b7d1653f91cc32d65cf
+    target_directory: archive
 
 build:
   number: 0
   noarch: generic
 
 requirements:
-  build:
+  host:
     - curl
     - git
     - maven
